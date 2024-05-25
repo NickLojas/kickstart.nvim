@@ -2,11 +2,17 @@ return {
 
   { -- Linting
     'mfussenegger/nvim-lint',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = 'VeryLazy',
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        javascript = { 'eslint' },
+        -- jsx = { 'eslint' },
+        -- javascriptreact = { 'eslint' },
+        typescript = { 'eslint' },
+        -- tsx = { 'eslint' },
+        -- typescriptreact = { 'eslint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

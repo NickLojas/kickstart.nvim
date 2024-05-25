@@ -174,29 +174,29 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
 
 -- clipboard utils
-vim.keymap.set('x', '<leader>p', [["_dP]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste but keep current copy/yank buffer' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank line to system buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank selection to system buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete but keep current paste buffer' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center screen after scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center screen after scroll up' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Browse directory' })
 -- re-center cursor after
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor in same spot after J' })
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format current file using LSP' })
 -- keep cursor in center of screen when searching
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Go to [n]ext match then recenter cursor in window' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Go to previous match then recenter cursor in window' })
 -- dont want to ever press Q
 vim.keymap.set('n', 'Q', '<nop>')
 -- quickfix navigation
-vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
-vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
+vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'Go to previous item in quickfix list' })
+vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 -- text replace
-vim.keymap.set('n', '<leader>rs', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>rs', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Go to next item in quickfix list' })
 -- make file executable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 

@@ -170,7 +170,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- MY KEYMAPS
 -- greatest remap ever
-
 vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
 
 -- clipboard utils
@@ -196,7 +195,7 @@ vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Go to next item in qu
 vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 -- text replace
-vim.keymap.set('n', '<leader>rs', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Go to next item in quickfix list' })
+vim.keymap.set('n', '<leader>rs', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace text under cursor in entire buffer' })
 -- make file executable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
@@ -298,6 +297,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+    vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk<CR>', {}),
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -929,7 +929,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.git', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

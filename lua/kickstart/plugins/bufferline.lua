@@ -5,4 +5,5 @@ return {
   config = function()
     require('bufferline').setup {}
   end,
+  vim.keymap.set('n', '<leader>bp', '<cmd>BufferLinePick<CR>'),
 }

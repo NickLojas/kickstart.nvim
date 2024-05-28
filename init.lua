@@ -184,6 +184,7 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Browse directory' })
 -- re-center cursor after
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor in same spot after J' })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format current file using LSP' })
+vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Open code_action dialog (import missing import over cursor)' })
 -- keep cursor in center of screen when searching
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Go to [n]ext match then recenter cursor in window' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Go to previous match then recenter cursor in window' })
@@ -711,7 +712,7 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true, javascript = true, typescript = true }
+        local disable_filetypes = { c = true, cpp = true, javascript = true, typescript = true, javascriptreact = true, typescriptreact = true }
         return {
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],

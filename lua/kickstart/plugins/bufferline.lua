@@ -7,6 +7,6 @@ return {
   end,
   vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineCyclePrev<CR>'),
   vim.keymap.set('n', '<leader>bn', '<cmd>BufferLineCycleNext<CR>'),
-  vim.keymap.set('n', '<leader>bP', '<cmd>BufferLinePick<CR>'),
-  vim.keymap.set('n', '<leader>bC', '<cmd>BufferLinePickClose<CR>'),
+  vim.keymap.set('n', '<leader>bb', '<cmd>BufferLinePick<CR>'),
+  vim.keymap.set('n', '<leader>bc', '<cmd>BufferLinePickClose<CR>'),
 }

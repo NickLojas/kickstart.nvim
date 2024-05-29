@@ -193,8 +193,8 @@ vim.keymap.set('n', 'Q', '<nop>')
 -- quickfix navigation
 vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'Go to previous item in quickfix list' })
 vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Go to next item in quickfix list' })
-vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
-vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
+vim.keymap.set('n', '<leader>j', '<cmd>lnext<CR>zz')
+vim.keymap.set('n', '<leader>k', '<cmd>lprev<CR>zz')
 -- text replace
 vim.keymap.set('n', '<leader>rs', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace text under cursor in entire buffer' })
 -- make file executable

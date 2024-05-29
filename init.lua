@@ -180,7 +180,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete but keep cur
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center screen after scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center screen after scroll up' })
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Browse directory' })
+vim.keymap.set('n', '<leader>sv', vim.cmd.Ex, { desc = 'Browse directory' })
 -- re-center cursor after
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor in same spot after J' })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format current file using LSP' })

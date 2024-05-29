@@ -183,8 +183,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center screen after scroll up'
 vim.keymap.set('n', '<leader>sv', vim.cmd.Ex, { desc = 'Browse directory' })
 -- re-center cursor after
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor in same spot after J' })
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format current file using LSP' })
-vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Open code_action dialog (import missing import over cursor)' })
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = '[L]SP [F]ormat current file' })
 -- keep cursor in center of screen when searching
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Go to [n]ext match then recenter cursor in window' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Go to previous match then recenter cursor in window' })
@@ -558,6 +557,8 @@ require('lazy').setup({
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>la', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+          -- vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Open code_action dialog (import missing import over cursor)' })
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.

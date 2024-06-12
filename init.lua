@@ -171,12 +171,14 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- MY KEYMAPS
 -- greatest remap ever
 vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
+vim.keymap.set('i', 'KJ', '<Esc>', { desc = 'Exit insert mode' })
 
 -- clipboard utils
-vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste but keep current copy/yank buffer' })
+vim.keymap.set('x', '<leader>P', [["_dP]], { desc = 'Paste but keep current copy/yank buffer' })
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank line to system buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], { desc = 'Paste line from system buffer' })
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank selection to system buffer' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete but keep current paste buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>D', [["_d]], { desc = 'Delete but keep current paste buffer' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center screen after scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center screen after scroll up' })
@@ -636,7 +638,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         -- eslint = {
         --   on_attach = function(client, bufnr)
         --     vim.api.nvim_create_autocmd('BufWritePre', {
@@ -752,12 +754,12 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
